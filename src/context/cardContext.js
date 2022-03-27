@@ -1,6 +1,6 @@
 import { useContext, createContext, useState, useEffect, useReducer} from "react";
 import axios from "axios";
-
+import {FilterReducer} from "../reducer/filterReducer"
 const CartContext = createContext();
 
 const CartProvider = ({ children }) => {
@@ -10,9 +10,16 @@ const CartProvider = ({ children }) => {
     setResp(response.data.products)
     })
     }, [])
-
+    const [state,dispatch]=useReducer(FilterReducer,{
+      category: "",
+      sortBy: "",
+      gender: "",
+      priceRange: 50000,
+      rating: 1,
+      brand: "",
+    });
   return (
-    <CartContext.Provider value={{ resp,setResp }}>
+    <CartContext.Provider value={{ resp,setResp,state,dispatch }}>
     {children}
     </CartContext.Provider>
   );
