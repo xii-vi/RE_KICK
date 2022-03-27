@@ -14,6 +14,7 @@ return(
             <small>₹ {item.price}</small>
         </div>
         {item.status !== "" && <div class="card-badge p-2">{item.status}</div>}
+        <div class="card-badge p-2 rating">{item.rating}</div>
     </div>
 </div>
 </Link>
