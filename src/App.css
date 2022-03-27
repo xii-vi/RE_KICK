@@ -8,3 +8,6 @@
     grid-template-columns: auto auto auto;
     grid-gap: 2rem;
 }
+.rating{
+    top:10rem;
+}

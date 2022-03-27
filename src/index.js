@@ -3,13 +3,20 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import { makeServer } from "./server";
+import { CartProvider } from "./context/cardContext";
+import { BrowserRouter } from "react-router-dom"
+
 
 // Call make Server
 makeServer();
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+    <CartProvider>
+      <App />
+    </CartProvider>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById("root")
 );
