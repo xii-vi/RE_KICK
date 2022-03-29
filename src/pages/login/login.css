@@ -1,0 +1,64 @@
+form>input {
+    width: 100%;
+}
+
+.login-form{
+    background-color: var(--white-color);
+    height: 100%;
+    /* margin: 1rem; */
+    margin-bottom:1rem ;
+    background-image: url(https://raw.githubusercontent.com/xii-vi/RE-Kick/dev/assests/form-bg.webp);
+    background-size: cover;
+}
+.login-btn {
+    width: 100%;
+}
+
+.login {
+    background-image:url(https://raw.githubusercontent.com/xii-vi/RE-Kick/dev/assests/login-bg.webp);
+    background-repeat: repeat;
+    background-size:cover;
+}
+
+.container-authentication{
+    display: grid;
+    grid-template-columns: auto;
+    justify-content: right;
+    /* margin-top: 3.5rem; */
+}
+.text-bold{
+    text-decoration: underline;
+}
+@media screen and (max-width: 450px){
+    .container-authentication{
+        display: grid;
+        grid-template-columns: auto;
+        justify-content: center;
+        margin-top: 0;
+    }
+    .product-category{
+        display: none;
+    }
+}
+
+.profile-dropdown{
+    position: relative;
+    display: inline-block;
+}
+.dropdown-menu{
+    display: none;
+    position: absolute;
+    background-color: var(--white-color);
+    color: var(--primary-color);
+    right: 0;
+    width: 10rem;
+}
+.profile-dropdown:hover .dropdown-menu{
+display: block;
+}
+
+.dropdown-menu>p{
+    font-size: 0.8rem;
+    font-weight: bold;
+    padding: 0.5rem;
+}

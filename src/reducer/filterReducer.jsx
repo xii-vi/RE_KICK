@@ -17,10 +17,11 @@ export const FilterReducer = (state, Action)  =>{
       case "RESET":
         return {
           ...state,
+          category: "",
           sortBy: "",
           gender: "",
-          priceRange: 12000,
-          rating: 3,
+          priceRange: 50000,
+          rating: 1,
           brand: "",
         };
       default:

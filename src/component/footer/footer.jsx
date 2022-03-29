@@ -1,6 +1,6 @@
 import "./footer.css"
 export const Footer = () => {
-    return(
+return(
 <footer className="footer-section-layout p-4">
 <div className="text-center py-5">
     <p className="footer-heading py-2">IMPORTANT LINKS</p>
