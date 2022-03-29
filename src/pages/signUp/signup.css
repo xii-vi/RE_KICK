@@ -1,0 +1,39 @@
+.signup{
+    background-image: url(https://raw.githubusercontent.com/xii-vi/RE-Kick/dev/assests/signup-bg.webp);
+    background-repeat: repeat;
+    background-size:cover;
+}
+.alert{
+    width: 100%;
+    color:black;
+    text-align: center;
+    margin: 0;
+}
+.signup-form{
+    background-image: none;
+    background-color: transparent;
+    color: var(--white-color);
+    margin: 0;
+    height: fit-content;
+}
+.btn-primary{
+color: var(--primary-color);
+background-color: var(--white-color);
+}
+.container-authentication{
+    display: grid;
+    grid-template-columns: auto;
+    justify-content: center;
+    margin-top: 3.5rem;
+}
+@media screen and (max-width: 710px){
+    form{
+        width: auto;
+    }
+    .container-authentication{
+        margin-top: 5rem;
+    }
+    .product-category{
+        display: none;
+    }
+}
