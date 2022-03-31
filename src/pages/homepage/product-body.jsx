@@ -1,6 +1,6 @@
 import { ProductCard } from "../../component/card/card";
 import { CategoryCard } from "../../component/card/category-card";
-import { useCart } from "../../context/cardContext";
+import { useCart } from "../../context/cartContext";
 
 export const ProductBody = () =>{
     const { resp } = useCart();

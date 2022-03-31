@@ -18,9 +18,11 @@ export const Navbar =()=>{
         <i className="fa fa-search cursor-pointer"></i>
     </div>
     <div className="nav-left-side-pills">
+        <Link to="/login">
         {userLogin?<span className="btn btn-primary" id="login-btn">Logout</span>:<span className="btn btn-primary" id="login-btn">Login</span>}
+        </Link>
         <a href="/pages/wishlist.html"><i className="far fa-heart"></i></a>
-        <a href="/pages/cart.html"><i className="fa fa-shopping-bag"></i></a>
+        <Link to="/cart"><a href="/pages/cart.html"><i className="fa fa-shopping-bag"></i></a></Link>
         {userLogin?<span>{userData.firstName} <i className="far fa-user"></i></span>:<a href="/pages/login.html"><i className="far fa-user"></i></a>}
     </div>
 </nav>

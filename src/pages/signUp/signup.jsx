@@ -28,7 +28,6 @@ export const Signup = () => {
 }
 return(
     <div className="signup">
-        <Navbar />
         <div className="container-authentication" >
     <form className="p-5 center-flex signup-form" onSubmit={(e)=> submitHandler(e, username, email, password)}>
         <h5>Welcome to the CRIB, fam!!</h5>
@@ -61,7 +60,6 @@ return(
         </div>
     </form>
     </div>
-    <Footer />
     </div>
     )
 }
