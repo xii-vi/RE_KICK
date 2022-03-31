@@ -1,5 +1,3 @@
-import { Navbar } from "../../component/navbar/navbar"
-import { Footer } from "../../component/footer/footer"
 import axios from "axios";
 import "../login/login.css"
 import { React, useReducer } from "react";
@@ -33,7 +31,6 @@ export const Login = () => {
   }
     return(
     <div className="login">
-    <div><Navbar /></div>
     <div className="container-authentication">
         <form className="p-5 center-flex login-form" onSubmit={(e)=> submitHandler(e, email,password)}>
             <p className="h5">Let's get you some KICKS!!!</p>
@@ -59,7 +56,6 @@ export const Login = () => {
             </div>
         </form>
     </div>
-    <Footer />
     </div>  
     )
 }

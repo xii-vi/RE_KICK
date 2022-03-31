@@ -1,4 +1,4 @@
-import { useCart } from "../../context/cardContext"
+import { useCart } from "../../context/cartContext"
 export const Filter = ()=>{
     const {dispatch , state :{ category, gender,priceRange,rating,brand}} = useCart()
     return(

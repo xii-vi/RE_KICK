@@ -15,7 +15,7 @@ export const products = [
     image:"https://github.com/xii-vi/RE-Kick/blob/dev/assests/image/AIR%20FORCE%201%20FONTANKA%20GYPSY%20ROSE.jpg?raw=true",
     status:"",
     for:"WOMEN",
-    rating:"3.8"
+    rating:"3.8",
   },
   {
     _id: uuid(),
