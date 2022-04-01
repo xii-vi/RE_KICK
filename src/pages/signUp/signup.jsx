@@ -15,7 +15,7 @@ export const Signup = () => {
      e.preventDefault();
      try{
      const signUpResponse = await axios.post("api/auth/signup", {username,email,password,ConfirmPassword});
-     localStorage.setItem("token", signUpResponse.data.encodedToken)
+     localStorage.setItem("encodedToken", signUpResponse.data.encodedToken)
      localStorage.setItem('userData', JSON.stringify(signUpResponse.data.createdUser));
      authDispatch({ type: "ADD_TOKEN", payload: responseData.data.encodedToken })
     }

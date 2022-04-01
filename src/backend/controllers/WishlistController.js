@@ -4,7 +4,7 @@ import { formatDate, requiresAuth } from "../utils/authUtils";
 /**
  * All the routes related to Wishlist are present here.
  * These are private routes.
- * Client needs to add "authorization" header with JWT token in it to access it.
+ * Client needs to add "authorization" header with JWT encodedToken in it to access it.
  * */
 
 /**

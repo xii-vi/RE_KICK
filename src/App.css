@@ -11,4 +11,24 @@
 .rating{
     top:10rem;
 }
-.hidden{display: none;}
+.hidden{
+    display: none;
+    visibility: hidden;
+}
+.wishlist-section-layout {
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2rem;
+    margin: 2rem 8rem;
+    justify-items: center;
+}
+.wishlist-icon{
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+.wishlist-added{
+    color: var(--dnd-color);
+}

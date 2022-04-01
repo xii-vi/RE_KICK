@@ -17,7 +17,7 @@ export const requiresAuth = function (request) {
   return new Response(
     401,
     {},
-    { errors: ["The token is invalid. Unauthorized access error."] }
+    { errors: ["The encodedToken is invalid. Unauthorized access error."] }
   );
 };
 
