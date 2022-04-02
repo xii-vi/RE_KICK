@@ -1,13 +1,8 @@
 import './App.css';
-import { Homepage } from './pages/homepage/homepage';
+import { Homepage,ProductListing,Login,Signup,Cart,Wishlist } from './pages';
 import { Routes, Route } from "react-router-dom";
-import { ProductListing } from './pages/product/productListing';
-import { Login } from './pages/login/login';
-import { Signup } from './pages/signUp/signup';
-import { Cart } from './pages/cart/cart';
 import { Navbar } from './component/navbar/navbar';
 import { Footer } from './component/footer/footer';
-import { Wishlist } from './pages/wishlist/wishlist';
 
 function App() {
   return (

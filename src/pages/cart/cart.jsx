@@ -6,8 +6,8 @@ export const Cart = ()=>{
     const {cartState:{cartItem}}= useCart();
     return(
         <>
-        <h2 class="text-center pt-4">MY CART ({cartItem.length})</h2>
-        <div class="cart-container">
+        <h2 className="text-center pt-4">MY CART ({cartItem.length})</h2>
+        <div className="cart-container">
         <div>{cartItem.map(item=>
         <CartProductCard singleP={item}/>)}</div>
         <div><CheckoutCard /></div>

@@ -9,19 +9,19 @@ export const ProductBody = ()=>{
     console.log("final.......",sortedArr)
     return(
         <div>
-        <p class="heading-sm-screen">
-                    <a href="/index.html">Home</a><span class="active-page-text">
+        <p className="heading-sm-screen">
+                    <a href="/index.html">Home</a><span className="active-page-text">
                         <a href="/pages/product-page/sneaker.html"> / Sneaker</a></span>
                 </p>
-                <div class="filter-icon">
-                    <a id="filter-icon">Filter <i class="fa fa-filter fa-2x"></i></a>
+                <div className="filter-icon">
+                    <a id="filter-icon">Filter <i className="fa fa-filter fa-2x"></i></a>
                 </div>
                 <select onChange={(e) => dispatch({ type: "SORT", payload: e.target.value })}>
                     <option value="">Sort by</option>
                     <option value="LOWTOHIGH">Low to High</option>
                     <option value="HIGHTOLOW">High to Low</option>
                 </select>
-            <div class="grid product-section-layout my-5">
+            <div className="grid product-section-layout my-5">
             {sortedArr.map(item=><ProductCard singleProduct={item}/>)}                        
             </div>
         </div>

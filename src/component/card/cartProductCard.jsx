@@ -34,7 +34,7 @@ export const CartProductCard = (props)=>{
     const WishlistHandler = () => {
       wishlistClicked ? setWishlistClicked(false) : setWishlistClicked(true);
       
-  if (userLogin) {
+    if (userLogin) {
       if(wishlistClicked===false) 
         {
           wishlistDispatch({ type: "ADD_TO_WISHLIST", payload: data});
@@ -65,7 +65,7 @@ export const CartProductCard = (props)=>{
                 <div className="mx-5 pt-5 pb-2">
                     <small>{data.brand}</small>
                     <p className="py-2">{data.model}</p>
-                    <small>₹ {data.price}</small>
+                    <small>$ {data.price}</small>
                     <div className="my-4">
                       {data.quantity === 1 ? (<button className="p-1" onClick={decreaseCartHandler}>
                         <i className="fas fa-trash"></i>
