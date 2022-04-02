@@ -3,11 +3,11 @@ const authReducer=(state, dispatch)=>{
         case "USER_LOGIN":
             return {...state, userLogin:true}
         case "USER_LOGOUT":
-            return {...state, userLogin:false, token:"", userData:""}
+            return {...state, userLogin:false, encodedToken:"", userData:""}
         case "USER_DATA":
             return {...state, userData:dispatch.payload}
         case "USER_TOKEN":
-            return {...state, token:dispatch.payload}
+            return {...state, encodedToken:dispatch.payload}
         default:
             state;
     }

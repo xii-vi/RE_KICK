@@ -53,12 +53,11 @@ export const Filter = ()=>{
                         </div>
                         <p className="py-4">Filter by Price</p>
                         <div className="flex flex-direction-col">
-                        <input className="simple-slider" type="range" min="10000" max="2000000"
+                        <input className="simple-slider" type="range" min="99" max="6000"
                                 value={priceRange} onChange={(e)=> dispatch({type:"PRICE_RANGE" , payload: e.target.value})} />
                         </div>
                         <div className="mt-5">
-                            <span className="btn btn-primary">₹10000</span>
-                            <span className="btn btn-primary">₹{priceRange}</span>
+                            <span className="btn btn-primary">${priceRange}</span>
                         </div>
 
 

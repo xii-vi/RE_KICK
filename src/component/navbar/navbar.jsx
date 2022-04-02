@@ -21,9 +21,9 @@ export const Navbar =()=>{
         <Link to="/login">
         {userLogin?<span className="btn btn-primary" id="login-btn">Logout</span>:<span className="btn btn-primary" id="login-btn">Login</span>}
         </Link>
-        <a href="/pages/wishlist.html"><i className="far fa-heart"></i></a>
-        <Link to="/cart"><a href="/pages/cart.html"><i className="fa fa-shopping-bag"></i></a></Link>
-        {userLogin?<span>{userData.firstName} <i className="far fa-user"></i></span>:<a href="/pages/login.html"><i className="far fa-user"></i></a>}
+        {userLogin?<Link to="/wishlist"><i className="far fa-heart"></i></Link>:<Link to="/login"><i className="far fa-heart"></i></Link>}
+        {userLogin?<Link to="/cart"><i className="fa fa-shopping-bag"></i></Link>:<Link to="/login"><i className="fa fa-shopping-bag"></i></Link>}
+        {userLogin?<span>{userData.firstName} <i className="far fa-user"></i></span>:<i className="far fa-user"></i>}
     </div>
 </nav>
 </div>

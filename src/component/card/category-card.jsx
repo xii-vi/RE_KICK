@@ -9,8 +9,8 @@ export const CategoryCard = ()=>{
     <>
     {categoryImg.map(item=>
     <Link to="/product-listing">
-    <div class="card-wrapper">
-        <div class="card-img">
+    <div className="card-wrapper">
+        <div className="card-img">
             <img src = {item}/>
             </div>
             </div>

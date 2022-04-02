@@ -5,7 +5,7 @@ const AuthContext = createContext();
 const AuthProvider = ({ children }) => {
     const [authState, authDispatch] = useReducer(authReducer, {
         userLogin:false,
-        token:"",
+        encodedToken:"",
         userDetails:"",
         userData:"",
     });

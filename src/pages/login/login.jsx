@@ -17,7 +17,7 @@ export const Login = () => {
   e.preventDefault();
   try{
   const loginResponse = await axios.post("api/auth/login", {email,password});
-  localStorage.setItem("token", loginResponse.data.encodedToken)
+  localStorage.setItem("encodedToken", loginResponse.data.encodedToken)
   localStorage.setItem('userData', JSON.stringify(loginResponse.data.foundUser));
   authDispatch({ type: "USER_LOGIN" })
   authDispatch({ type: "USER_TOKEN", payload: loginResponse.data.encodedToken })

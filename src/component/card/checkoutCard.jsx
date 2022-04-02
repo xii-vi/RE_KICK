@@ -23,7 +23,7 @@ export const CheckoutCard=()=>{
             <div className="card-wrapper">
                 <div className="flex space-bw">
                     <p className="p-3">Subtotal</p>
-                    <p className="p-3">₹{price}</p>
+                    <p className="p-3">${price}</p>
                 </div>
                 <hr />
                 <div className="m-2">
@@ -33,7 +33,7 @@ export const CheckoutCard=()=>{
                 <hr />
                 <div className="flex space-bw">
                     <p className="h4 p-3 text-bold">Total</p>
-                    <p className="h4 p-3 text-bold">₹{finalPrice}</p>
+                    <p className="h4 p-3 text-bold">${finalPrice}</p>
                 </div><button className="btn btn-cart btn-primary mt-2">Checkout</button>
             </div>
         </div>

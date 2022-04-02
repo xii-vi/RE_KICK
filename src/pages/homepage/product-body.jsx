@@ -9,14 +9,14 @@ export const ProductBody = () =>{
     const NewArrival = resp.filter(item=>item.category==="Sneakers").slice(0,3)
     return(
     <div>
-    <p class="category-heading h4 m-5 py-5">NEW ARRIVALS</p>
-        <div class="grid product-section-layout m-4">{NewArrival.map(item=><ProductCard singleProduct={item}/>)}</div>
-        <p class="category-heading h4 m-5 py-5">TRENDING SNEAKERS</p>
-        <div class="grid product-section-layout m-4">{TrendingSneaker.map(item=><ProductCard singleProduct={item}/>)}</div>
-        <p class="category-heading h4 m-5 py-5">TRENDING STREETWEAR</p>
-        <div class="grid product-section-layout m-4">{TrendingStreetwear.map(item=><ProductCard singleProduct={item}/>)}</div>
-        <p class="category-heading h4 m-5 py-5">CATEGORIES</p>
-        <div class="grid product-section-layout m-4"><CategoryCard /></div>
+    <p className="category-heading h4 m-5 py-5">NEW ARRIVALS</p>
+        <div className="grid product-section-layout m-4">{NewArrival.map(item=><ProductCard singleProduct={item}/>)}</div>
+        <p className="category-heading h4 m-5 py-5">TRENDING SNEAKERS</p>
+        <div className="grid product-section-layout m-4">{TrendingSneaker.map(item=><ProductCard singleProduct={item}/>)}</div>
+        <p className="category-heading h4 m-5 py-5">TRENDING STREETWEAR</p>
+        <div className="grid product-section-layout m-4">{TrendingStreetwear.map(item=><ProductCard singleProduct={item}/>)}</div>
+        <p className="category-heading h4 m-5 py-5">CATEGORIES</p>
+        <div className="grid product-section-layout m-4"><CategoryCard /></div>
     </div>
     )
 }
