@@ -6,17 +6,17 @@ import { wishlistReducer } from "../reducer/wishlistReducer"
 const CartContext = createContext();
 
 const CartProvider = ({ children }) => {
-    const[resp,setResp]=useState([]);
+    const[responseData,setResponseData]=useState([]);
     useEffect(() => {
     axios.get("/api/products").then(response=>{
-    setResp(response.data.products)
+    setResponseData(response.data.products)
     })
     }, [])
     const [state,dispatch]=useReducer(FilterReducer,{
       category: "",
       sortBy: "",
       gender: "",
-      priceRange: 50000,
+      priceRange: 3000,
       rating: 1,
       brand: "",
     });
@@ -35,7 +35,7 @@ const CartProvider = ({ children }) => {
       cartItem:cart
     })
   return (
-    <CartContext.Provider value={{ resp,setResp,state,dispatch,cartDispatch,cartState,wishlistState, wishlistDispatch }}>
+    <CartContext.Provider value={{ responseData,setResponseData,state,dispatch,cartDispatch,cartState,wishlistState, wishlistDispatch }}>
     {children}
     </CartContext.Provider>
   );

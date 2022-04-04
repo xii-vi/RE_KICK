@@ -1,5 +1,6 @@
 import { useCart } from "../../context/cartContext";
 import { WishlistItem } from "../../component/card/wishlistCard";
+import "./wishlist.css";
 
 export const Wishlist = () => {
 const {

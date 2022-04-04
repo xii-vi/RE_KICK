@@ -16,22 +16,18 @@
     margin: 0;
     height: fit-content;
 }
-.btn-primary{
+/* .btn-primary{
 color: var(--primary-color);
 background-color: var(--white-color);
-}
+} */
 .container-authentication{
     display: grid;
     grid-template-columns: auto;
     justify-content: center;
-    margin-top: 3.5rem;
 }
 @media screen and (max-width: 710px){
     form{
         width: auto;
-    }
-    .container-authentication{
-        margin-top: 5rem;
     }
     .product-category{
         display: none;

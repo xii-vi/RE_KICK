@@ -5,7 +5,7 @@
 }
 
 .navbar {
-    background-color: var(--black-color);
+    background-color: var(--primary-color);
     align-items: space-between;
     justify-content: space-between;
     border-radius: 0;

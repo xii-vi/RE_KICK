@@ -25,9 +25,9 @@ export const Signup = () => {
 }
 return(
     <div className="signup">
-        <div className="container-authentication" >
+        <div className="container-authentication py-5" >
     <form className="p-5 center-flex signup-form" onSubmit={(e)=> submitHandler(e, username, email, password)}>
-        <h5>Welcome to the CRIB, fam!!</h5>
+        <p className="h5">Welcome to the CRIB, fam!!</p>
         <div className="my-5">
             <div className="py-5 flex flex-direction-col">
                 <small className="py-2">Username</small>
