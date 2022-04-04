@@ -4,7 +4,7 @@ import { ProductBody } from "./productBody";
 export const ProductListing = ()=>{
     return(
 <>
-    <div className="grid product-page-layout" id="top-of-page">
+    <div className="grid product-page-layout">
         <div><Filter /></div>  
         <div><ProductBody /></div>       
     </div>

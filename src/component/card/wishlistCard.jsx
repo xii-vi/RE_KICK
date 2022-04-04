@@ -31,7 +31,7 @@ export const WishlistItem = (props) => {
                 </div>
                 <div className="wishlist-icon p-2" onClick={removeFromWishlistHandler}><i className="far fa-heart fa-2x"></i></div>
                 <div className="m-4 ">
-                    <button className="btn btn-primary" onClick={addToCardHandler}><i className="fa fa-shopping-bag mr-4"></i>Move to bag</button>
+                    <button className="btn btn-primary product-card-button" onClick={addToCardHandler}><i className="fa fa-shopping-bag mr-4"></i>Move to bag</button>
                 </div>
             </div>
         </div>

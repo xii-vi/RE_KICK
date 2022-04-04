@@ -1,34 +1,6 @@
 @import url('https://re-ui.netlify.app/stylesheet/main.css');
-
-.grid {
-    display: grid;
-    justify-content: space-around;
-}
-.product-section-layout {
-    grid-template-columns: auto auto auto;
-    grid-gap: 2rem;
-}
-.rating{
-    top:10rem;
-}
-.hidden{
-    display: none;
-    visibility: hidden;
-}
-.wishlist-section-layout {
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 2rem;
-    margin: 2rem 8rem;
-    justify-items: center;
-}
-.wishlist-icon{
-    position: absolute;
-    top: 0;
-    right: 0;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-}
-.wishlist-added{
-    color: var(--dnd-color);
+@import url('./stylesheet/main.css');
+:root{
+    --primary-color:#1b1c1e;
+    --white-color:#F5F5F5;
 }

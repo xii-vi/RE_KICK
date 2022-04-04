@@ -1,0 +1,110 @@
+.grid {
+    display: grid;
+    justify-content: space-around;
+}
+.product-section-layout {
+    grid-template-columns: auto auto auto;
+    grid-gap: 2rem;
+}
+
+.product-page-layout {
+    grid-template-columns: 20% 80%;
+}
+
+.wishlist-section-layout {
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2rem;
+    margin: 2rem 8rem;
+    justify-items: center;
+}
+
+.footer-section-layout {
+    grid-template-columns: repeat(4, 1fr);
+}
+.footer-heading{
+    font-size: 1.5rem;
+    letter-spacing: 0.2rem;
+    line-height: 2rem;
+}
+.filter-icon{
+    display: none;
+    text-align: right;
+}
+.close-icon{
+    display: none;
+}
+@media screen and (max-width: 1060px) {
+    .footer-section-layout {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 2rem;
+    }
+    .product-page-layout {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    .product-section-layout {
+        display: grid;
+        grid-template-columns: auto auto;
+        margin: 2rem;
+    }
+    .filter-wrapper{
+        display: none;
+    }
+    .filter-icon{
+        display: block;
+    }
+    .close-icon{
+        display: block;
+    }
+    .sm-filter-mobile{
+        display: none;
+    }
+    .sm-filter{
+        position: fixed;
+        z-index: 2;
+        margin-top: 0.5rem;
+        padding: 1.5rem;
+        right: 0;
+        top: 5.4rem;
+        opacity: 0.98;
+        background-color: var(--background-color);
+        height: 80vh;
+        overflow-y: scroll;
+        border-radius: 10px;
+        border: 1px solid var(--black-color);
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .product-section-layout {
+        display: grid;
+        grid-template-columns: auto;
+    }
+
+    .wishlist-section-layout {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 2rem;
+        margin: 2rem 2rem;
+    }
+
+    .search-bar-wrapper {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .category-heading{
+        font-size: 1.5rem;
+    }
+    .footer-section-layout {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .wishlist-section-layout {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+}

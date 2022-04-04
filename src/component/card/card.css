@@ -1,0 +1,12 @@
+.category-card-img>img{
+    max-inline-size: 100%;
+    block-size: auto;
+}
+.rating{
+    top:10rem;
+}
+
+.product-card-button{
+    padding: 0.5rem;
+    width: 100%;
+}

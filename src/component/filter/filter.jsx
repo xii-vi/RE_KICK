@@ -1,25 +1,23 @@
-import { useCart } from "../../context/cartContext"
+import { useCart } from "../../context/cartContext";
+import { useState } from "react";
 export const Filter = ()=>{
+    const[filter,setFilter]= useState(true);
     const {dispatch , state :{ category, gender,priceRange,rating,brand}} = useCart()
-    return(
-        <>
+    const closeFilter =()=>{
+        filter?setFilter(false):setFilter(true)
+    }
+    return(      
         <div>
-            <p className="p-5 heading-lg-screen">
-                <a href="/index.html">Home</a><span className="active-page-text"><a href="/pages/product-page/sneaker.html"> /
-                        Sneaker</a></span>
-            </p>
-            <div className="filter">
-            </div>
-        </div>
-        <div>
+            <div className="filter-icon m-5" onClick={closeFilter}>
+                    Filter <i className="fa fa-filter fa-2x"></i>
+                </div>
             <div className="product-page-heading p-2">
-                
-                <div className="sm-filter">
+                <div className={filter?"sm-filter":"hidden"}>
                     <div className="sm-filter-container">
+                    <p className="close-icon" onClick={closeFilter}><i className="fa fa-times fa-2x"></i></p>
                     <div className=" text-center mt-4">
                             <button className="py-2 btn btn-primary" onClick={() => dispatch({ type: "RESET" })}>Reset Filters</button>
                         </div>
-                        <a id="close-icon" className="close-icon"><i className="fa fa-times fa-2x"></i></a>
                         <p className="py-4">FILTER & SEARCH</p>
 
                         <p className="py-1">Filter by Category</p>
@@ -112,6 +110,5 @@ export const Filter = ()=>{
                 </div>
             </div>
         </div>
-        </>
     )
 }

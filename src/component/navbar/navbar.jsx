@@ -6,10 +6,6 @@ export const Navbar =()=>{
     return(
 <div className="navbar-wrapper">
 <nav className="flex navbar">
-    <a id="open-menu" className="open-menu"><i className="fa fa-bars fa-2x"></i></a>
-    <a id="close-menu" className="close-menu"><i className="fa fa-times fa-2x"></i></a>
-    <div className="mobile-sidebar" id="sm-sidebar">
-    </div>
     <div className="logo">
         <Link to="/"> <span className="category-heading h2">RE-KICKS</span></Link>
     </div>

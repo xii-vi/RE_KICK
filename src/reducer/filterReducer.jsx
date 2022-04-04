@@ -20,7 +20,7 @@ export const FilterReducer = (state, Action)  =>{
           category: "",
           sortBy: "",
           gender: "",
-          priceRange: 50000,
+          priceRange: 3000,
           rating: 1,
           brand: "",
         };

@@ -19,7 +19,7 @@ export const CheckoutCard=()=>{
             <h2 className="heading"> Please Add Items in the Cart</h2>
         ) : 
         (
-        <div className="price-container mb-3">
+        <div className="price-container m-4">
             <div className="card-wrapper">
                 <div className="flex space-bw">
                     <p className="p-3">Subtotal</p>

@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import "./card.css";
 export const CategoryCard = ()=>{
     const categoryImg= [
         "https://superkicks.in/wp-content/uploads/2021/10/Men.jpg",
@@ -10,7 +11,7 @@ export const CategoryCard = ()=>{
     {categoryImg.map(item=>
     <Link to="/product-listing">
     <div className="card-wrapper">
-        <div className="card-img">
+        <div className="category-card-img">
             <img src = {item}/>
             </div>
             </div>
