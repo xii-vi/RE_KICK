@@ -32,7 +32,8 @@ Clone the project
 - Made using [Re UI](https://rekick.netlify.app/)
 
 
-## Project Screens and Functionality
+## Features of E-commerce Application
+
 -  Home Page
 > - Landing page with a list of featured categories.
 > - Clicking on feat category will take user to the product listing page.
@@ -61,10 +62,6 @@ Clone the project
 > - Sign-up Page from where user can sign-up using email, username, password & confirm password.
 > - Login Page from where user can log in using email & password.
 > - Logout button from where user can log out from the app on the header navbar.
-
-## Features of E-commerce Application
-
-- Quick overview
 
 
 ## Authors
