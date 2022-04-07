@@ -39,7 +39,7 @@ Go to the project directory
 - Made using [Re UI](https://rekick.netlify.app/)
 
 
-## Features of E-commerce Application
+## Features of RE-Kick
 
 -  Home Page
 > - Landing page with a list of featured categories.
