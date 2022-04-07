@@ -1,18 +1,23 @@
 import axios from "axios";
 import "../login/login.css"
 import { React, useReducer } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useAuth } from "../../context/authContext";
 import { loginReducer } from "../../reducer/authReducer";
+import { toast } from 'react-toastify';
 
 export const Login = () => {
   const navigate = useNavigate();
+  const location = useLocation();
   const {authDispatch}= useAuth();
+
   const [{email,password},loginDispatch] = useReducer(loginReducer, {email:"", password:""});
+  
   const testHandler=()=>[
     loginDispatch({type:"SET_EMAIL",payload:"rohitabhishek318@gmail.com"}),
     loginDispatch({type:"SET_PASSWORD",payload:"rohitabhishek"})
   ]
+
   const submitHandler= async (e, email, password)=>{
   e.preventDefault();
   try{
@@ -20,15 +25,15 @@ export const Login = () => {
   localStorage.setItem("encodedToken", loginResponse.data.encodedToken)
   localStorage.setItem('userData', JSON.stringify(loginResponse.data.foundUser));
   authDispatch({ type: "USER_LOGIN" })
+  toast.info("Logged In",{theme:"dark",position: toast.POSITION.BOTTOM_CENTER})
   authDispatch({ type: "USER_TOKEN", payload: loginResponse.data.encodedToken })
   authDispatch({ type: "USER_DATA", payload: loginResponse.data.foundUser })
-  }catch(err){
+  navigate("/product-listing")
+}catch(err){
     console.log(err);
-  }
-  finally{
-    navigate("/product-listing")
-  }
-  }
+}
+}
+
     return(
     <div className="login">
     <div className="container-authentication-login py-5">
@@ -48,7 +53,7 @@ export const Login = () => {
                 </div>
                 <div className="py-3">
                     <button className="btn btn-outline-primary login-btn">Login</button>
-                    <button className="btn btn-outline-primary login-btn" onClick={testHandler}>Test</button>
+                    <button className="btn btn-outline-primary login-btn" onClick={testHandler}>Guest Login</button>
                 </div>
                 <Link to="/signup">
                 <p className="pb-2">New here ? <a className="text-bold">Register Now</a></p>

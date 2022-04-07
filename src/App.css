@@ -1,6 +1,19 @@
 @import url('https://re-ui.netlify.app/stylesheet/main.css');
 @import url('./stylesheet/main.css');
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Lexend:wght@300;400;500;600;700&family=PT+Sans:wght@400;700&family=Syne&display=swap');
+
 :root{
     --primary-color:#1b1c1e;
     --white-color:#F5F5F5;
+}
+
+.Toastify__toast-container--top-right {
+    margin-top: 5rem;
+}
+.site-name{
+    font-family: 'Krona One', sans-serif;
+}
+.error-img{
+    width: 30%;
+    height: 30%;   
 }

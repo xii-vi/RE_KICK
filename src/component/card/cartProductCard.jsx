@@ -20,7 +20,7 @@ export const CartProductCard = (props)=>{
       cartDispatch, wishlistDispatch
     } = useCart();
 
-  const data = props.singleP
+  const data = props.singleProductCard
 
     const increaseCartHandler = () => {
       cartDispatch({ type: "INCREASE_CART_ITEM", payload: data });

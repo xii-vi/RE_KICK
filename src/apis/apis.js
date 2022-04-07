@@ -1,4 +1,5 @@
 import axios from "axios";
+import { toast } from "react-toastify";
 
 const updateCartItem = async(productData, encodedToken) => {
     try {
@@ -14,6 +15,9 @@ const updateCartItem = async(productData, encodedToken) => {
         const updatedCartData = JSON.parse(localStorage.getItem('userData'))
         updatedCartData.cart = [...response.data.cart]
         localStorage.setItem('userData', JSON.stringify(updatedCartData))
+        toast.success("Added to the Cart!",{
+            theme: "dark"
+          });
 
     } catch (error) {
         console.log(error)
@@ -26,6 +30,9 @@ const RemoveFromCart = async (productData, encodedToken) => {
                 authorization: encodedToken
             }
         })
+        toast.error("Removed from the Cart!",{
+            theme: "dark"
+          });
         const updatedCartData = JSON.parse(localStorage.getItem('userData'))
         updatedCartData.cart = [...response.data.cart]
         localStorage.setItem('userData', JSON.stringify(updatedCartData))
@@ -48,6 +55,7 @@ console.log(productData)
                 authorization: encodedToken
             }
         })
+        toast.success(<p> Cart Quantity increased.</p>)
         const updatedCartData = JSON.parse(localStorage.getItem('userData'))
         updatedCartData.cart = [...response.data.cart]
         localStorage.setItem('userData', JSON.stringify(updatedCartData))
@@ -69,6 +77,7 @@ const DecreaseCartQuantity = async (productData, encodedToken) => {
                 authorization: encodedToken
             }
         })
+        toast.success(<p> Cart Quantity decreased.</p>)
         const updatedCartData = JSON.parse(localStorage.getItem('userData'))
         updatedCartData.cart = [...response.data.cart]
         localStorage.setItem('userData', JSON.stringify(updatedCartData))
@@ -87,7 +96,7 @@ const updateWishlistItem = async (productData, encodedToken) => {
                 authorization: encodedToken
             }
         })
-        
+        toast.success("Added to the Wishlist!",{theme:"dark"})
         const updatedwishlistData = JSON.parse(localStorage.getItem('userData'))
         updatedwishlistData.wishlist = [...response.data.wishlist]
         localStorage.setItem('userData', JSON.stringify(updatedwishlistData))
@@ -104,6 +113,7 @@ const RemoveFromWishlist = async (productData, encodedToken) => {
                 authorization: encodedToken
             }
         })
+        toast.error("Removed from the Wishlist!",{theme:"dark"});
         const updatedwishlistData = JSON.parse(localStorage.getItem('userData'))
         updatedwishlistData.wishlist = [...response.data.wishlist]
         localStorage.setItem('userData', JSON.stringify(updatedwishlistData))

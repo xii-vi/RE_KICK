@@ -95,8 +95,11 @@
 }
 
 @media screen and (max-width: 480px) {
+    body{
+        font-size: 0.8rem;
+    }
     .category-heading{
-        font-size: 1.5rem;
+        font-size: 1rem;
     }
     .footer-section-layout {
         display: grid;
@@ -106,5 +109,11 @@
     .wishlist-section-layout {
         display: grid;
         grid-template-columns: 1fr;
+    }
+    .nav-login-btn{
+        display: none;
+    }
+    .footer-heading{
+        font-size: 0.7rem;
     }
 }

@@ -1,11 +1,28 @@
 import { useCart } from "../../context/cartContext";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 export const Filter = ()=>{
     const[filter,setFilter]= useState(true);
     const {dispatch , state :{ category, gender,priceRange,rating,brand}} = useCart()
+
     const closeFilter =()=>{
         filter?setFilter(false):setFilter(true)
     }
+
+    const windowResizeHandler =(e,width)=>{
+        if(e?.currentTarget?.innerWidth <1080 || width <1080 )
+        setFilter(false)
+        else 
+        setFilter(true)
+    }
+
+    useEffect(()=>{
+        windowResizeHandler(null,window.screen.width)
+        window.addEventListener("resize",windowResizeHandler)
+        return ()=>{
+        window.removeEventListener("resize",windowResizeHandler)
+        }
+    },[])
+    
     return(      
         <div>
             <div className="filter-icon m-5" onClick={closeFilter}>
@@ -19,7 +36,6 @@ export const Filter = ()=>{
                             <button className="py-2 btn btn-primary" onClick={() => dispatch({ type: "RESET" })}>Reset Filters</button>
                         </div>
                         <p className="py-4">FILTER & SEARCH</p>
-
                         <p className="py-1">Filter by Category</p>
                         <div className="flex flex-direction-col">
                             <label className="py-1"><input type="checkbox" value="Sneakers"
@@ -35,16 +51,16 @@ export const Filter = ()=>{
                         </div>
                         <div className="flex flex-direction-col">
                             <p className="py-1">Filter by Gender</p>
-                            <label className="py-1" for="Unisex">
+                            <label className="py-1"htmlFor="Unisex">
                                 <input type="radio" value="Unisex" name="radio-button" 
                                 checked={gender === "UNISEX"} onChange={() => dispatch({ type: "GENDER", payload: "UNISEX" })}/> Unisex
                             </label>
-                            <label className="py-1" for="Men">
+                            <label className="py-1"htmlFor="Men">
                                 <input type="radio" value="Men" name="radio-button" 
                                 checked={gender === "MEN"}
                                 onChange={() => dispatch({ type: "GENDER", payload: "MEN" })}/> Men
                             </label>
-                            <label className="py-1" for="Women">
+                            <label className="py-1"htmlFor="Women">
                                 <input type="radio" value="Women" name="radio-button"
                                 checked={gender === "WOMEN"} onChange={() => dispatch({ type: "GENDER", payload: "WOMEN" })}/> Women
                             </label>

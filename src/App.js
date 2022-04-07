@@ -1,13 +1,26 @@
 import './App.css';
-import { Homepage,ProductListing,Login,Signup,Cart,Wishlist } from './pages';
+import { Homepage,ProductListing,Login,Signup,Cart,Wishlist,Error } from './pages';
 import { Routes, Route } from "react-router-dom";
 import { Navbar } from './component/navbar/navbar';
 import { Footer } from './component/footer/footer';
-
+import { ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+import { ScrollToTop } from './utilities/scrollToTop';
 function App() {
   return (
     <div>
-      <Navbar />
+      <ScrollToTop />
+      <ToastContainer
+          position='top-right'
+          autoClose={1500}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          limit={5}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover />
+          <Navbar />
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/product-listing" element={<ProductListing />} />
@@ -15,6 +28,7 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/wishlist" element={<Wishlist />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="*" element={<Error />} />
       </Routes>
       <Footer />
     </div>
