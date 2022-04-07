@@ -2,10 +2,10 @@
 <h2 align="center"> Let's re-style your kick game. <a href="https://rekick.netlify.app/"> Live Preview </a>  🚀 </h2>
 
 ## Demo
+![final](https://user-images.githubusercontent.com/86154835/162265150-cb730639-948b-4a59-871f-b0e2bdbd6ea7.gif)
 
 ### Live link   
 [![portfolio](https://img.shields.io/badge/RE_Kick-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://rekick.netlify.app/)
-
 
 ## Tech Stack
 
