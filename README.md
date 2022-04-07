@@ -23,6 +23,13 @@ Clone the project
   git clone https://github.com/xii-vi/RE_KICK.git
 ```
 
+Go to the project directory
+
+```bash
+  cd RE_KICK
+```
+
+
 ## Major Highlights of RE-Kick
 
 - Fully Responsive
