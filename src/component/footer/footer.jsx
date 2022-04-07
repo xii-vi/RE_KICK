@@ -43,7 +43,7 @@ return(
 </footer>
 <hr />
 <div className="text-center">
-    <p className="h1">RE-KICK</p>
+    <p className="h1 site-name">RE-KICKS</p>
 </div>
 <hr />
 <div className="text-center">

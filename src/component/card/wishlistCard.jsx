@@ -29,9 +29,11 @@ export const WishlistItem = (props) => {
                     <p className="bold-text">{item.model}</p>
                     <small>$ {item.price}</small>
                 </div>
-                <div className="wishlist-icon p-2" onClick={removeFromWishlistHandler}><i className="far fa-heart fa-2x"></i></div>
-                <div className="m-4 ">
+                <div>
                     <button className="btn btn-primary product-card-button" onClick={addToCardHandler}><i className="fa fa-shopping-bag mr-4"></i>Move to bag</button>
+                    </div>
+                    <div className="pt-5">
+                    <button className="btn btn-primary product-card-button" onClick={removeFromWishlistHandler}><i className="fa fa-heart mr-4"></i>Remove from Wishlist</button>
                 </div>
             </div>
         </div>

@@ -15,7 +15,7 @@ export const ProductBody = ()=>{
                 </select>
 
             <div className="grid product-section-layout my-5">
-            {sortedArr.map(item=><ProductCard singleProduct={item}/>)}                        
+            {sortedArr.map(item=><ProductCard singleProduct={item} key={item._id}/>)}                        
             </div>
         </div>
     )

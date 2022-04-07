@@ -10,11 +10,11 @@ export const ProductBody = () =>{
     return(
     <div>
     <p className="category-heading h4 m-5 py-5">NEW ARRIVALS</p>
-        <div className="grid product-section-layout m-4">{NewArrival.map(item=><ProductCard singleProduct={item}/>)}</div>
+        <div className="grid product-section-layout m-4">{NewArrival.map(item=><ProductCard singleProduct={item} key={item._id}/>)}</div>
         <p className="category-heading h4 m-5 py-5">TRENDING SNEAKERS</p>
-        <div className="grid product-section-layout m-4">{TrendingSneaker.map(item=><ProductCard singleProduct={item}/>)}</div>
+        <div className="grid product-section-layout m-4">{TrendingSneaker.map(item=><ProductCard singleProduct={item} key={item._id}/>)}</div>
         <p className="category-heading h4 m-5 py-5">TRENDING STREETWEAR</p>
-        <div className="grid product-section-layout m-4">{TrendingStreetwear.map(item=><ProductCard singleProduct={item}/>)}</div>
+        <div className="grid product-section-layout m-4">{TrendingStreetwear.map(item=><ProductCard singleProduct={item} key={item._id}/>)}</div>
         <p className="category-heading h4 m-5 py-5">CATEGORIES</p>
         <div className="grid product-section-layout m-4"><CategoryCard /></div>
     </div>

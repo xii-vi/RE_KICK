@@ -9,7 +9,7 @@ export const Cart = ()=>{
         <h2 className="text-center pt-4">MY CART ({cartItem.length})</h2>
         <div className="cart-container">
         <div>{cartItem.map(item=>
-        <CartProductCard singleP={item}/>)}</div>
+        <CartProductCard singleProductCard={item} key={item._id}/>)}</div>
         <div><CheckoutCard /></div>
         </div>
         </>
