@@ -1,4 +1,4 @@
-export const filterFunction = (ListofProduct, category, sortBy, gender,priceRange,rating,brand) =>
+export const filterFunction = (ListofProduct, category, sortBy, gender,priceRange,rating,brand,search) =>
 {
   if(category.length !== 0) {
     ListofProduct = ListofProduct.filter((item => category.includes(item.category)))
@@ -7,7 +7,6 @@ export const filterFunction = (ListofProduct, category, sortBy, gender,priceRang
     ListofProduct = ListofProduct.sort((a, b) => sortBy === "LOWTOHIGH" ? a.price - b.price : b.price - a.price)
 }
   if (gender) {
-    
     ListofProduct = ListofProduct.filter(item => item.for==gender)
 }
   if (priceRange) {
@@ -16,8 +15,11 @@ export const filterFunction = (ListofProduct, category, sortBy, gender,priceRang
   if(rating){
     ListofProduct = ListofProduct.filter(item => item.rating > rating)
 }
-if(brand.length !== 0) {
-  ListofProduct = ListofProduct.filter((item => brand.includes(item.brand)))
+  if(brand.length !== 0) {
+    ListofProduct = ListofProduct.filter((item => brand.includes(item.brand)))
+}
+  if(search) {
+    ListofProduct = ListofProduct.filter((item => item.model.toLowerCase().includes(search)));
 }
 return ListofProduct;
 }

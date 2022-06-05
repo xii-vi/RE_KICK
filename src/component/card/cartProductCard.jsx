@@ -53,10 +53,6 @@ export const CartProductCard = (props)=>{
       cartDispatch({ type: "REMOVE_FROM_CART", payload: data });
       RemoveFromCart(data, encodedToken)
     }
-    if (data.quantity === 0) {
-      cartDispatch({ type: "REMOVE_FROM_CART", payload: data });
-      RemoveFromCart(data, encodedToken);
-    }
     return (
         <div className="flex product-container m-4">
                 <img className="img-square"
@@ -67,7 +63,7 @@ export const CartProductCard = (props)=>{
                     <p className="py-2">{data.model}</p>
                     <small>$ {data.price}</small>
                     <div className="my-4">
-                      {data.quantity === 1 ? (<button className="p-1" onClick={decreaseCartHandler}>
+                      {data.quantity === 1 ? (<button className="p-1" onClick={removeFromCartHandler}>
                         <i className="fas fa-trash"></i>
                     </button>):(<button onClick={decreaseCartHandler}><i className="fa fa-minus p-1"></i></button> ) }
                         <span className="text-bold mx-2">{data.quantity}</span>

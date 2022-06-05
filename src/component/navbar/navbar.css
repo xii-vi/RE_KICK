@@ -25,6 +25,7 @@
     cursor: pointer;
 }
 
-.nav-left-side-pills>a {
-    margin: 0 1rem;
+.badge{
+    background-color: var(--white-color);
+    color:var(--primary-color);
 }

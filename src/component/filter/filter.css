@@ -1,0 +1,34 @@
+.filter-icon{
+    display: none;
+    text-align: right;
+}
+.close-icon{
+    display: none;
+}
+
+@media screen and (max-width: 1080px) {
+    .sm-filter-container{
+        display: none;
+    }
+    .filter-icon{
+        display: block;
+    }
+    .close-icon{
+        display: block;
+    }
+    .sm-filter .sm-filter-container{
+        display: block;
+        position: fixed;
+        z-index: 2;
+        margin-top: 0.5rem;
+        padding: 1.5rem;
+        right: 0;
+        top: 4rem;
+        opacity: 0.98;
+        background-color: var(--background-color);
+        height: 90vh;
+        overflow-y: scroll;
+        border-radius: 10px;
+        border: 1px solid var(--black-color);
+    }
+}

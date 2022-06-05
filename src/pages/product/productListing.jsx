@@ -1,11 +1,15 @@
 import { Filter } from "../../component/filter/filter"
 import "./productListing.css"
 import { ProductBody } from "./productBody";
+import {useState} from "react";
 export const ProductListing = ()=>{
+    const[toggle,setToggle] = useState(false);
     return(
 <>
     <div className="grid product-page-layout">
-        <div><Filter /></div>  
+        <div className={toggle?"sm-filter":""}>
+            <Filter setToggle={setToggle} />
+            </div>  
         <div><ProductBody /></div>       
     </div>
 </>

@@ -1,11 +1,15 @@
 .wishlist-icon{
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 1rem;
+    right: 1rem;
     background-color: transparent;
     border: none;
     cursor: pointer;
 }
 .wishlist-added{
     color: var(--dnd-color);
+}
+
+.height{
+    min-height: 45vh;
 }

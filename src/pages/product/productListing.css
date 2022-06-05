@@ -42,6 +42,6 @@
 select{
     background-color: transparent;
     font-size: 1.25rem;
-    border: none;
-    text-align: center;
+    border: 2px solid var(--primary-color);
+    border-radius: 0.25rem;
 }
