@@ -12,8 +12,8 @@ export const UserPage = () => {
         <div>
             <div className='grid user-page-layout'>
                 <div className='pl-5 py-5 flex center-flex flex-direction-col'>
-                <div class="avatar-wrapper">
-                <img class="avatar avatar-std" src="https://re-ui.netlify.app/assets/avatar/avatar-2.png" alt="user-profile"/>
+                <div className="avatar-wrapper">
+                <img className="avatar avatar-std" src="https://re-ui.netlify.app/assets/avatar/avatar-2.png" alt="user-profile"/>
                 <span> {firstName} {lastName} </span></div>
                     <button className='btn btn-primary user-page-link my-2' onClick={(e)=>buttonText(e)}>
                         <NavLink

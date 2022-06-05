@@ -78,7 +78,7 @@ export const CheckoutCard=({addressData})=>{
                     <div className="text-bold">Shipping to : {addressData.length === 0 ?<p>Add Shipping Address</p>:
                     addressData.map(address=>{
                         return(
-                        <div>
+                        <div key ={address._id}>
                             <p>{address.home}</p>
                             <p>{address.state} {address.country}</p>
                             <p>{address.pinCode}</p>

@@ -19,7 +19,7 @@ export const AddressPage = ({ setModal }) => {
                 onClick={AddAddressHandler}>
                 Add New Address
             </button>
-            <p className="flex m-4">
+            <div className="flex m-4">
                 {addressList.length > 0 ? (addressList.map((address) =>
                     <AddressCard
                         address={address}
@@ -31,7 +31,7 @@ export const AddressPage = ({ setModal }) => {
                     <li>Please add a address.</li>
                 )
                 }
-            </p>
+            </div>
         </div>
         </div>
     )

@@ -16,8 +16,8 @@ export const OrderDetails =()=>{
         {
         orders.map(orderDetails=>{
         return(
-            <>
-                <div key={orderDetails.paymentId}>
+            < div key={orderDetails.paymentId} >
+                <div >
                 <div className="flex order-details my-2 p-4">
                     <p>OrderID: <small className="text-card-content">{orderDetails.orderId}</small></p>
                     <p>PaymentID: <small className="text-card-content">{orderDetails.paymentId}</small></p>
@@ -41,7 +41,7 @@ export const OrderDetails =()=>{
                             )
                             })}
                 </div>
-            </>
+            </div>
                     )
                 })
             }
