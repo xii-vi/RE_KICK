@@ -7,23 +7,26 @@ const CartContext = createContext();
 
 const CartProvider = ({ children }) => {
     const[responseData,setResponseData]=useState([]);
+    const [isLoading, setIsLoading] = useState(false)
     useEffect(() => {
-    axios.get("/api/products").then(response=>{
+    (async ()=>{
+    const response = await axios.get("/api/products")
     setResponseData(response.data.products)
-    })
+    }
+    )()
     }, [])
-    const [state,dispatch]=useReducer(FilterReducer,{
+
+
+    const [filterState,filterDispatch]=useReducer(FilterReducer,{
       category: "",
       sortBy: "",
       gender: "",
       priceRange: 3000,
       rating: 1,
       brand: "",
+      search:""
     });
-    const {
-      cart,
-      wishlist
-    } = JSON.parse(localStorage.getItem("userData")) || {
+    const {cart,wishlist} = JSON.parse(localStorage.getItem("userData")) || {
       cart: [],
       wishlist:[],
     }
@@ -35,7 +38,7 @@ const CartProvider = ({ children }) => {
       cartItem:cart
     })
   return (
-    <CartContext.Provider value={{ responseData,setResponseData,state,dispatch,cartDispatch,cartState,wishlistState, wishlistDispatch }}>
+    <CartContext.Provider value={{ responseData,setResponseData,filterState,filterDispatch,cartDispatch,cartState,wishlistState, wishlistDispatch,isLoading, setIsLoading }}>
     {children}
     </CartContext.Provider>
   );

@@ -1,0 +1,11 @@
+.order-details{
+    justify-content: space-around;
+    background-color: var(--white-color);
+    border-radius: 10px;
+}
+
+@media screen and (max-width: 780px) {
+    .order-details{
+        flex-direction: column;
+    }
+}

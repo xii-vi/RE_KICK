@@ -1,5 +1,6 @@
 import { useCart } from "../../context/cartContext";
 import { WishlistItem } from "../../component/card/wishlistCard";
+import { Link } from "react-router-dom";
 import "./wishlist.css";
 
 export const Wishlist = () => {
@@ -9,7 +10,14 @@ wishlistState: { wishlistItem },
 return (
 <>
     {wishlistItem.length === 0 ? (
-        <div className="heading h2">No Items in the Wishlist</div>
+        <div className="height">
+        <h2 className="heading flex center-flex ">No Items in the Wishlist</h2>
+        <div className="text-center">
+            <Link to="/product-listing">
+            <button className="btn btn-primary">See Products</button>
+        </Link></div>
+        
+        </div>
     ) : (
         <div>
             <h2 className="text-center pt-4">MY WISHLIST ({wishlistItem.length})</h2>

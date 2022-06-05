@@ -13,7 +13,6 @@ export const Signup = () => {
     e.preventDefault();
     try{
     const signUpResponse = await axios.post("api/auth/signup", {username,email,password,ConfirmPassword});
-    
     localStorage.setItem("encodedToken", signUpResponse.data.encodedToken)
     localStorage.setItem('userData', JSON.stringify(signUpResponse.data.createdUser));
     authDispatch({ type: "ADD_TOKEN", payload: signUpResponse.data.encodedToken })
@@ -48,7 +47,7 @@ return(
                 <input className="p-2" type="password" placeholder="Confirm password" value={ConfirmPassword} required 
                 onChange={(e)=> signupDispatch({type:"SET_CONFIRM_PASSWORD",payload:e.target.value})}/>
             </div>
-            <div>{ConfirmPassword === password ? "" : <div class="alert alert-danger"><i class="fas fa-exclamation-triangle mr-2"></i>Password doesn't match</div>}
+            <div>{ConfirmPassword === password ? "" : <div className="alert alert-danger"><i className="fas fa-exclamation-triangle mr-2"></i>Password doesn't match</div>}
             </div>
             <div className="py-5">
                 <button className="btn btn-primary text-bold login-btn">Register</button>

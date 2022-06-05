@@ -39,8 +39,7 @@ const wishlistHan =()=>{
         }
 }
 return(
-<>
-<div className="card-wrapper">
+<Link to={`/products/${item._id}`}><div className="card-wrapper">
     <div className="card-img">
         <img src={item.image} alt={item.model} />
         <div className="p-3">
@@ -49,12 +48,8 @@ return(
             <small>$ {item.price}</small>
         </div>
         {item.status !== "" && <div className="card-badge p-2">{item.status}</div>}
-        <div className="card-badge p-2 rating">{item.rating} &#11088;</div>
-        <div className={wishlistClicked ? "wishlist-icon p-2 wishlist-added":"wishlist-icon p-2" } onClick={wishlistHan}><i className="far fa-heart fa-2x"></i></div>
-        <button className={cartClicked ? "hidden":"btn btn-primary product-card-button"} onClick={addToCartHandler}>Add to cart</button>
-        <button className={cartClicked ?"btn btn-primary product-card-button": "hidden"} onClick={goToCartHandler}>Go to cart</button>
     </div>
 </div>
-</>
+</Link>
 )
 }

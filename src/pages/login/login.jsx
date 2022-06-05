@@ -5,12 +5,15 @@ import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useAuth } from "../../context/authContext";
 import { loginReducer } from "../../reducer/authReducer";
 import { toast } from 'react-toastify';
+import { useCart } from "../../context/cartContext";
+import { LoadSpin } from "../../component/loader/loader";
 
 export const Login = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const {authDispatch}= useAuth();
-
+  const {isLoading,setIsLoading} = useCart();
+  const from = location.state?.from?.pathname || "/"; 
   const [{email,password},loginDispatch] = useReducer(loginReducer, {email:"", password:""});
   
   const testHandler=()=>[
@@ -21,6 +24,7 @@ export const Login = () => {
   const submitHandler= async (e, email, password)=>{
   e.preventDefault();
   try{
+  setIsLoading(true)
   const loginResponse = await axios.post("api/auth/login", {email,password});
   localStorage.setItem("encodedToken", loginResponse.data.encodedToken)
   localStorage.setItem('userData', JSON.stringify(loginResponse.data.foundUser));
@@ -28,12 +32,12 @@ export const Login = () => {
   toast.info("Logged In",{theme:"dark",position: toast.POSITION.BOTTOM_CENTER})
   authDispatch({ type: "USER_TOKEN", payload: loginResponse.data.encodedToken })
   authDispatch({ type: "USER_DATA", payload: loginResponse.data.foundUser })
-  navigate("/product-listing")
+  navigate(from, {replace : true} )
+  setIsLoading(false)
 }catch(err){
-    console.log(err);
+    toast.error("Some Error Occured",{theme:"dark",position: toast.POSITION.BOTTOM_CENTER})
 }
 }
-
     return(
     <div className="login">
     <div className="container-authentication-login py-5">
@@ -49,14 +53,16 @@ export const Login = () => {
                     <input className="p-2" type="password" placeholder="password" value={password} required onChange={(e)=> loginDispatch({type:"SET_PASSWORD",payload:e.target.value})}/>
                 </div>
                 <div className="py-2">
-                    <a href="#">Forgot Password ?</a>
+                    <p>Forgot Password ?</p>
                 </div>
+                { isLoading ?<LoadSpin />:
                 <div className="py-3">
                     <button className="btn btn-outline-primary login-btn">Login</button>
                     <button className="btn btn-outline-primary login-btn" onClick={testHandler}>Guest Login</button>
                 </div>
+                }
                 <Link to="/signup">
-                <p className="pb-2">New here ? <a className="text-bold">Register Now</a></p>
+                <span className="pb-2">New here ? <p className="text-bold">Register Now</p></span>
                 </Link>
             </div>
         </form>

@@ -5,8 +5,35 @@
 .rating{
     top:10rem;
 }
+.card-wrapper{
+    transition: 0.4s ease;
+}
 
+.card-wrapper:hover{
+    transform: scale(1.05);
+}
 .product-card-button{
     padding: 0.5rem;
     width: 100%;
+}
+
+.horizontal-card-text-content{
+    justify-content: space-around;
+}
+
+.address-card{
+    border: 2px solid var(--primary-color);
+    max-width: fit-content;
+    border-radius: 10px;
+    background-color: var(--white-color);
+}
+
+.card-wrapper-checkout{
+    max-width: 20rem;
+    background-color: var(--white-color);
+    position: relative;
+}
+
+.card-badge{
+    color: var(--white-color);
 }
