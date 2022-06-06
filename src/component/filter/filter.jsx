@@ -17,12 +17,12 @@ export const Filter = ({setToggle})=>{
                         <div className="flex flex-direction-col">
                             <label className="py-1"><input type="checkbox" value="Sneakers"
                             checked={category.includes("Sneakers")}
-                            onClick={(e) => filterDispatch({ type: "CATEGORY", payload: e.target.value })}/>
+                            onChange={(e) => filterDispatch({ type: "CATEGORY", payload: e.target.value })}/>
                                 Sneakers
                             </label>
                             <label className="py-1"><input type="checkbox" value="Streetwear" 
                             checked={category.includes("Streetwear")}
-                            onClick={(e) => filterDispatch({ type: "CATEGORY", payload: e.target.value })}/>
+                            onChange={(e) => filterDispatch({ type: "CATEGORY", payload: e.target.value })}/>
                                 Streetwear
                             </label>
                         </div>
@@ -75,27 +75,27 @@ export const Filter = ({setToggle})=>{
                         <div className="flex flex-direction-col">
                             <label className="py-1"><input type="checkbox" value="ADIDAS" 
                             checked={brand.includes("ADIDAS")}
-                            onClick={(e) => filterDispatch({ type: "BRAND", payload: e.target.value })}/>
+                            onChange={(e) => filterDispatch({ type: "BRAND", payload: e.target.value })}/>
                                 Adidas
                             </label>
                             <label className="py-1"><input type="checkbox" value="DREW"
                             checked={brand.includes("DREW")}
-                            onClick={(e) => filterDispatch({ type: "BRAND", payload: e.target.value })}/>
+                            onChange={(e) => filterDispatch({ type: "BRAND", payload: e.target.value })}/>
                                 Drew
                             </label>
                             <label className="py-1"><input type="checkbox" value="ESSENTIAL"
                             checked={brand.includes("ESSENTIAL")} 
-                            onClick={(e) => filterDispatch({ type: "BRAND", payload: e.target.value })}/>
+                            onChange={(e) => filterDispatch({ type: "BRAND", payload: e.target.value })}/>
                                 Essential
                             </label>
                             <label className="py-1"><input type="checkbox" value="McDonald's"
                             checked={brand.includes("McDonald's")}
-                            onClick={(e) => filterDispatch({ type: "BRAND", payload: e.target.value })}/>
+                            onChange={(e) => filterDispatch({ type: "BRAND", payload: e.target.value })}/>
                                 McDonald's
                             </label>
                             <label className="py-1"><input type="checkbox" value="NIKE"
                             checked={brand.includes("NIKE")}
-                            onClick={(e) => filterDispatch({ type: "BRAND", payload: e.target.value })}/>
+                            onChange={(e) => filterDispatch({ type: "BRAND", payload: e.target.value })}/>
                                 Nike
                             </label>
                         </div>

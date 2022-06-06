@@ -10,7 +10,7 @@ export const UserPage = () => {
     }
     return (
         <div>
-            <div className='grid user-page-layout'>
+            <div className='grid user-page-layout height'>
                 <div className='pl-5 py-5 flex center-flex flex-direction-col'>
                 <div className="avatar-wrapper">
                 <img className="avatar avatar-std" src="https://re-ui.netlify.app/assets/avatar/avatar-2.png" alt="user-profile"/>
