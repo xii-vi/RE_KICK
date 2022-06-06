@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./footer.css";
 export const Footer = () => {
 return(
@@ -12,7 +13,7 @@ return(
 </div>
 <div className="text-center">
     <p className="footer-heading">NEED HELP?</p>
-        <li className="gray-text pt-2">My Account</li>
+        <Link to="/profile"><li className="gray-text pt-2">My Account</li></Link>
         <li className="gray-text pt-2">Size Chart</li>
         <li className="gray-text pt-2">Contact Us</li>
 </div>

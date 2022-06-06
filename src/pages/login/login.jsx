@@ -62,7 +62,7 @@ export const Login = () => {
                 </div>
                 }
                 <Link to="/signup">
-                <span className="pb-2">New here ? <p className="text-bold">Register Now</p></span>
+                <p className="pb-4">New here ? <span className="text-bold">Register Now</span></p>
                 </Link>
             </div>
         </form>

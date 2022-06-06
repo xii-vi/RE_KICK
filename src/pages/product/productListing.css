@@ -32,7 +32,6 @@
 
 .gray-text:hover {
     color: var(--white-color);
-    font-size: 110%;
 }
 
 .active-page-text{

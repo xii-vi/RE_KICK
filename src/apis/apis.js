@@ -17,10 +17,12 @@ const updateCartItem = async(productData, encodedToken) => {
         localStorage.setItem('userData', JSON.stringify(updatedCartData))
         toast.success("Added to the Cart!",{
             theme: "dark"
-          });
+        });
 
     } catch (error) {
-        console.log(error)
+        toast.error("Some Error Occured!",{
+            theme: "dark"
+        });
     }
 }
 const RemoveFromCart = async (productData, encodedToken) => {
@@ -32,13 +34,15 @@ const RemoveFromCart = async (productData, encodedToken) => {
         })
         toast.error("Removed from the Cart!",{
             theme: "dark"
-          });
+        });
         const updatedCartData = JSON.parse(localStorage.getItem('userData'))
         updatedCartData.cart = [...response.data.cart]
         localStorage.setItem('userData', JSON.stringify(updatedCartData))
         }
         catch (error) {
-        console.log(error);
+        toast.error("Some Error Occured!",{
+            theme: "dark"
+        });;
         }
 
 }
@@ -61,7 +65,9 @@ console.log(productData)
         localStorage.setItem('userData', JSON.stringify(updatedCartData))
 
     } catch (error) {
-        console.log(error);
+        toast.error("Some Error Occured!",{
+            theme: "dark"
+        });;
 
     }
 }
@@ -82,7 +88,9 @@ const DecreaseCartQuantity = async (productData, encodedToken) => {
         updatedCartData.cart = [...response.data.cart]
         localStorage.setItem('userData', JSON.stringify(updatedCartData))
     } catch (error) {
-        console.log(error);
+        toast.error("Some Error Occured!",{
+            theme: "dark"
+        });;
     }
 }
 const updateWishlistItem = async (productData, encodedToken) => {
@@ -102,7 +110,9 @@ const updateWishlistItem = async (productData, encodedToken) => {
         localStorage.setItem('userData', JSON.stringify(updatedwishlistData))
     }
     catch {
-        console.log(error);
+        toast.error("Some Error Occured!",{
+            theme: "dark"
+        });;
     }
 
 }
@@ -119,7 +129,9 @@ const RemoveFromWishlist = async (productData, encodedToken) => {
         localStorage.setItem('userData', JSON.stringify(updatedwishlistData))
         }
         catch (error) {
-        console.log(error);
+        toast.error("Some Error Occured!",{
+            theme: "dark"
+        });;
         }
 }
 

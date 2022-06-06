@@ -11,7 +11,7 @@ export const Cart = ()=>{
     return(
         <>
         {  cartItem.length === 0 ? (
-        <div className="cart-height">
+        <div className="height">
             <h2 className="heading flex center-flex" > Please Add Items in the Cart</h2>
         <Link to="/product-listing">
             <div className="text-center">

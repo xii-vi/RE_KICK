@@ -9,7 +9,3 @@
 .wishlist-added{
     color: var(--dnd-color);
 }
-
-.height{
-    min-height: 45vh;
-}

@@ -15,11 +15,14 @@ export const Signup = () => {
     const signUpResponse = await axios.post("api/auth/signup", {username,email,password,ConfirmPassword});
     localStorage.setItem("encodedToken", signUpResponse.data.encodedToken)
     localStorage.setItem('userData', JSON.stringify(signUpResponse.data.createdUser));
-    authDispatch({ type: "ADD_TOKEN", payload: signUpResponse.data.encodedToken })
+    authDispatch({ type: "USER_LOGIN" })
+    authDispatch({ type: "USER_TOKEN", payload: signUpResponse.data.encodedToken })
+    authDispatch({ type: "USER_DATA", payload: signUpResponse.data.createdUser })
     navigate("/login")
+    toast.success("Sign up Successful",{theme:"dark"})
     }
     catch(err){
-    console.log(err);
+    toast.error("Some Error Occured",{theme:"dark",position: toast.POSITION.BOTTOM_CENTER})
     }
 }
 return(

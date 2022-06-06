@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 
 export const OrderPage = ()=>{
     return(
-        <>
+        <div className="height">
         <div className="flex center-flex py-5 p-5">
             <h4>Congrats, Order Placed Successfully!
             You will receive an email once it get shipped.
@@ -12,6 +12,6 @@ export const OrderPage = ()=>{
         <Link to="/product-listing"><button className="btn btn-primary mr-4">Continue Shopping</button></Link>
         <Link to="/profile/orderDetails"><button className="btn btn-secondary">Order Details</button></Link>
         </div>
-        </>
+        </div>
     )
 }

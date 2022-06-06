@@ -40,7 +40,7 @@ export const CheckoutCard=({addressData})=>{
         }
         const options = {
             key: "rzp_test_npke5xpZFFZbZu",
-            amount: finalPrice*100*80,
+            amount: finalPrice*100*50,
             currency: "INR",
             name: "RE-KICKS",
             description: "Get your grails.",

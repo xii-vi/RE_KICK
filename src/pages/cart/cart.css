@@ -4,9 +4,6 @@
 .space-bw {
     justify-content: space-between;
 }
-.cart-height{
-    min-height: 45vh;
-}
 .product-container {
     background-color: var(--white-color);
     max-width: 35rem;
