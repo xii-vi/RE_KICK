@@ -39,12 +39,12 @@ export const Navbar =()=>{
         <Link to="/wishlist">
             <span className="icons-wrapper">
                 <span><i className="far fa-heart"></i></span>
-                <span className="badge icons">{wishlistItem.length}</span>
+                {userLogin?<span className="badge icons">{wishlistItem.length}</span>:""}
             </span>
             </Link>
         <Link to="/cart"><span className="icons-wrapper">
                 <span><i className="fa fa-shopping-bag"></i></span>
-                <span className="badge icons">{cartItem.length}</span>
+                {userLogin?<span className="badge icons">{cartItem.length}</span>:""}
             </span></Link>
         <Link to="/profile"><span className="p-4">
         {userLogin?<span>{userData.firstName} <i className="far fa-user"></i></span>:<span><i className="far fa-user"></i></span>}
