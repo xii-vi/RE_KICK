@@ -7,20 +7,21 @@ import { loginReducer } from "../../reducer/authReducer";
 import { toast } from 'react-toastify';
 import { useCart } from "../../context/cartContext";
 import { LoadSpin } from "../../component/loader/loader";
+import { useDocumentTitle } from "../../utilities/documentTitle";
 
 export const Login = () => {
+    useDocumentTitle("Login")
   const navigate = useNavigate();
   const location = useLocation();
   const {authDispatch}= useAuth();
   const {isLoading,setIsLoading} = useCart();
-  const from = location.state?.from?.pathname || "/"; 
+  const from = location.state?.from?.pathname || -1; 
   const [{email,password},loginDispatch] = useReducer(loginReducer, {email:"", password:""});
   
   const testHandler=()=>[
     loginDispatch({type:"SET_EMAIL",payload:"rohitabhishek318@gmail.com"}),
     loginDispatch({type:"SET_PASSWORD",payload:"rohitabhishek"})
   ]
-
   const submitHandler= async (e, email, password)=>{
   e.preventDefault();
   try{
@@ -51,9 +52,6 @@ export const Login = () => {
                 <div className="pb-5 flex flex-direction-col">
                     <small className="pb-2">Password</small>
                     <input className="p-2" type="password" placeholder="password" value={password} required onChange={(e)=> loginDispatch({type:"SET_PASSWORD",payload:e.target.value})}/>
-                </div>
-                <div className="py-2">
-                    <p>Forgot Password ?</p>
                 </div>
                 { isLoading ?<LoadSpin />:
                 <div className="py-3">

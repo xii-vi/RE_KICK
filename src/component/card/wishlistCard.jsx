@@ -3,21 +3,31 @@ import { useCart } from "../../context/cartContext";
 import {
   RemoveFromWishlist,
   updateCartItem,
+  IncreaseCartQuantity
 } from "../../apis/apis"
+import { isItemInCart } from "../../utilities/helperFunction";
 
 export const WishlistItem = (props) => {
     const {authState: { encodedToken },} = useAuth();
-    const { wishlistDispatch, cartDispatch } = useCart();
+    const { wishlistDispatch, cartDispatch,cartState:{cartItem} } = useCart();
     const item = props.item;
     const removeFromWishlistHandler = () => {
         wishlistDispatch({ type: "REMOVE_FROM_WISHLIST", payload: item });
         RemoveFromWishlist(item,encodedToken)
     }
     const addToCardHandler = () => {
+        if(isItemInCart(item.id,cartItem)){
+            cartDispatch({ type: "INCREASE_CART_ITEM", payload: item });
+            IncreaseCartQuantity(item, encodedToken);
+            wishlistDispatch({ type: "REMOVE_FROM_WISHLIST", payload: item });
+            RemoveFromWishlist(item,encodedToken)  
+        }
+        else{
         cartDispatch({ type: "ADD_TO_CART", payload: item });
         updateCartItem(item, encodedToken);
         wishlistDispatch({ type: "REMOVE_FROM_WISHLIST", payload: item });
         RemoveFromWishlist(item,encodedToken)
+        }
         }
     return(
     <div>

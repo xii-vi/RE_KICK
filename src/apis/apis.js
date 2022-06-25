@@ -48,7 +48,6 @@ const RemoveFromCart = async (productData, encodedToken) => {
 }
 
 const IncreaseCartQuantity = async (productData, encodedToken) => {
-console.log(productData)
     try {
         const response = await axios.post(`/api/user/cart/${productData._id}`, {
             action: {

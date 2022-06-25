@@ -9,6 +9,7 @@ import {
   import { useAuth } from "../../context/authContext" 
   import { useState } from "react"
   import { useNavigate } from "react-router-dom"
+import { isItemInWishlist } from "../../utilities/helperFunction"
 export const CartProductCard = (props)=>{
   const [wishlistClicked, setWishlistClicked] = useState(false);
   const navigate = useNavigate();
@@ -17,7 +18,7 @@ export const CartProductCard = (props)=>{
       } = useAuth();
   
     const {
-      cartDispatch, wishlistDispatch
+      cartDispatch, wishlistDispatch,wishlistState: { wishlistItem }
     } = useCart();
 
   const data = props.singleProductCard
@@ -32,22 +33,15 @@ export const CartProductCard = (props)=>{
       DecreaseCartQuantity(data, encodedToken);
     };
     const WishlistHandler = () => {
-      wishlistClicked ? setWishlistClicked(false) : setWishlistClicked(true);
-      
-    if (userLogin) {
-      if(wishlistClicked===false) 
-        {
+        if(isItemInWishlist(data.id,wishlistItem)){
+          cartDispatch({ type: "REMOVE_FROM_CART", payload: data });
+          RemoveFromCart(data, encodedToken)
+      } else {
           wishlistDispatch({ type: "ADD_TO_WISHLIST", payload: data});
           updateWishlistItem(data, encodedToken);
           cartDispatch({ type: "REMOVE_FROM_CART", payload: data });
           RemoveFromCart(data, encodedToken)
-      } else {
-          wishlistDispatch({ type: "REMOVE_FROM_WISHLIST", payload: data });
-          RemoveFromWishlist(data,encodedToken)
       } 
-  } else {
-    navigate("/login");
-  }
 };
     const removeFromCartHandler = () => {
       cartDispatch({ type: "REMOVE_FROM_CART", payload: data });

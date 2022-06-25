@@ -1,47 +1,40 @@
-import { useNavigate, useParams} from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import { useAuth } from "../../context/authContext";
 import { useCart } from "../../context/cartContext";
-import { useState } from "react";
 import { RemoveFromWishlist, updateCartItem ,updateWishlistItem } from "../../apis/apis"
+import { isItemInCart, isItemInWishlist } from "../../utilities/helperFunction";
 
-export const SingleProductCard = ()=>{
-  const [cartClicked, setCartClicked] = useState(false);
-  const [wishlistClicked, setWishlistClicked] = useState(false);  
+export const SingleProductCard = ({productId:ID})=>{
   const navigate =  useNavigate();
   const {authState:{userLogin,encodedToken}} = useAuth();
-  const {productId} = useParams();
-  const { cartDispatch, wishlistDispatch,responseData,wishlistState:{wishlistItem}} = useCart();
-  const product = responseData.find?.(item => item._id === productId);
-  const {brand,model,price,description,image} = product ?? {}
+  const { cartDispatch, wishlistDispatch,responseData,wishlistState:{wishlistItem},cartState:{cartItem}} = useCart();
+  const product = responseData.find?.(item => item._id === ID);
+  const {brand,model,price,description,image,id} = product ?? {}
 
-  const isProductInWishlist = (productId, wishlistItem) => {
-    return wishlistItem.find(({
-        _id
-    }) => _id === productId)
-  }
   const addToCartHandler =()=>{
     if(userLogin){
-    setCartClicked(true);
     cartDispatch({type:"ADD_TO_CART", payload:product})
     updateCartItem(product,encodedToken);
-    }else{  
-    navigate("/login") 
     }
+    else{
+      navigate("/login")
+    }
+    
 }
 const goToCartHandler =()=>{
     if(userLogin){
         navigate("/cart")
     }
     else{   
-        navigate("/login") 
+      navigate("/login")
         }
 }
 const wishlistHandler =()=>{
     if(userLogin)
     {
-        wishlistClicked ? setWishlistClicked(false) : setWishlistClicked(true);
-        if(isProductInWishlist(productId, wishlistItem))
+        if(isItemInWishlist(id,wishlistItem))
         {
+        wishlistDispatch({ type: "REMOVE_FROM_WISHLIST", payload: product });
         RemoveFromWishlist(product,encodedToken)
         }
         else{
@@ -71,12 +64,12 @@ const wishlistHandler =()=>{
         </div>
         <div className="px-5">
           <span className="pr-5 single-page-button">
-            <button className={cartClicked ? "hidden":"btn btn-primary "} onClick={addToCartHandler}>Add to cart <i className="fas fa-shopping-cart px-2"></i></button>
-            <button className={cartClicked ?"btn btn-primary": "hidden"} onClick={goToCartHandler}>Go to cart <i className="fas fa-arrow-circle-right px-2"></i></button>
+            <button className={isItemInCart(id,cartItem) ? "hidden":"btn btn-primary "} onClick={addToCartHandler}>Add to cart <i className="fas fa-shopping-cart px-2"></i></button>
+            <button className={isItemInCart(id,cartItem) ?"btn btn-primary": "hidden"} onClick={goToCartHandler}>Go to cart <i className="fas fa-arrow-circle-right px-2"></i></button>
           </span>
             <span className="single-page-button">
-            <button className={wishlistClicked ? "hidden":"btn btn-secondary "} onClick={wishlistHandler}>Add to Wishlist <i className="far fa-heart px-2"></i></button>
-            <button className={wishlistClicked ?"btn btn-secondary": "hidden"} onClick={wishlistHandler}>Remove from Wishlist <i className="fas fa-heart px-2"></i></button>
+            <button className={isItemInWishlist(id,wishlistItem) ? "hidden":"btn btn-secondary "} onClick={wishlistHandler}>Add to Wishlist <i className="far fa-heart px-2"></i></button>
+            <button className={isItemInWishlist(id,wishlistItem) ?"btn btn-secondary": "hidden"} onClick={wishlistHandler}>Remove from Wishlist <i className="fas fa-heart px-2"></i></button>
             </span>
         </div>
       </div>

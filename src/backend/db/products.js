@@ -9,6 +9,30 @@ export const products = [
   {
     _id: uuid(),
     brand: "NIKE",
+    model: "Nike x Blazer Mid'77 Purple Glitter",
+    price:"110",
+    category:"Sneakers",
+    image:"https://github.com/xii-vi/RE-Kick/blob/dev/assests/image/Blazer%20Mid'77%20Purple%20Glitter.jpg?raw=true",
+    status:"",
+    for:"UNISEX",
+    rating:"4.1",
+    description:"This offering of the Nike Blazer Mid sports a very simple, traditional design featuring a White leather base with tonal branding throughout, matching leather overlays atop a solid White rubber sole. Highlighting the shoe are Purple glittered Swooshes on the sides."
+  },
+  {
+    _id: uuid(),
+    brand: "ESSENTIAL",
+    model: "Fear of God Essentials 1977 Hoodie 'Iron'",
+    price:"530",
+    category:"Streetwear",
+    image:"https://res.cloudinary.com/dx8gt3nnu/image/upload/q_auto,f_auto/dryp-shoe-pictures/fear-of-god-essentials-1977-hoodie-'iron'-ss22/display_picture.png",
+    status:"HEAT",
+    for:"WOMEN",
+    rating:"4.2",
+    description:"Fear of God Essentials delivered this Fear of God Essentials Pullover Hoodie in Linen as a part of their SSENSE-exclusive Summer 2022 release.This Fear of God Essentials Pullover Hoodie features rubberized Essentials Logos on the chest, wrist, and back. Each Fear of God Essentials Pullover Hoodie made available as a part of this release was made from an 80% Cotton, 20% Viscose blend."
+  },
+  {
+    _id: uuid(),
+    brand: "NIKE",
     model: "WOMEN's Air Force 1 Gypsy Rose",
     price:"99",
     category:"Sneakers",
@@ -20,15 +44,15 @@ export const products = [
   },
   {
     _id: uuid(),
-    brand: "NIKE",
-    model: "Nike x Blazer Mid'77 Purple Glitter",
-    price:"110",
-    category:"Sneakers",
-    image:"https://github.com/xii-vi/RE-Kick/blob/dev/assests/image/Blazer%20Mid'77%20Purple%20Glitter.jpg?raw=true",
+    brand: "DREW",
+    model: "Drew house deconstructed mascot hoodie 'Golden Yellow'",
+    price:"621",
+    category:"Streetwear",
+    image:"https://res.cloudinary.com/dx8gt3nnu/image/upload/q_auto,f_auto/dryp-shoe-pictures/drew-house-mascot-hoodie-'golden-yellow'-/display_picture.png",
     status:"",
     for:"UNISEX",
-    rating:"4.1",
-    description:"This offering of the Nike Blazer Mid sports a very simple, traditional design featuring a White leather base with tonal branding throughout, matching leather overlays atop a solid White rubber sole. Highlighting the shoe are Purple glittered Swooshes on the sides."
+    rating:"2.8",
+    description:"100% cotton ventura fit - slightly cropped with drop shoulder and longer sleeve raw cuff and raw hem mascot screen print on front."
   },
   {
     _id: uuid(),
@@ -77,30 +101,6 @@ export const products = [
     for:"MEN",
     rating:"3.4",
     description:"Travis Scott and Jordan Brand teamed up to deliver the Air Jordan 6 Retro Travis Scott British Khaki. The British Khaki marks the second time that Travis has added his touch to the Jordan 6 silhouette, the first being the 2019 Air Jordan 6 Travis Scott.The upper of the Air Jordan 6 Retro Travis Scott British Khaki is made of British Khaki suede. From there, hits of Bright Crimson appear on the heel and tongue embroidered logos. The upper also has two cargo pockets: one with a snap enclosure on the lateral ankle and one with a zip enclosure on the medial ankle. A translucent tongue, heel tab, and outsole that glows in the dark adds the finishing touches to this latest Travis Scott Jordan."
-  },
-  {
-    _id: uuid(),
-    brand: "DREW",
-    model: "Drew house deconstructed mascot hoodie 'Golden Yellow'",
-    price:"621",
-    category:"Streetwear",
-    image:"https://res.cloudinary.com/dx8gt3nnu/image/upload/q_auto,f_auto/dryp-shoe-pictures/drew-house-mascot-hoodie-'golden-yellow'-/display_picture.png",
-    status:"",
-    for:"UNISEX",
-    rating:"2.8",
-    description:"100% cotton ventura fit - slightly cropped with drop shoulder and longer sleeve raw cuff and raw hem mascot screen print on front."
-  },
-  {
-    _id: uuid(),
-    brand: "ESSENTIAL",
-    model: "Fear of God Essentials 1977 Hoodie 'Iron'",
-    price:"530",
-    category:"Streetwear",
-    image:"https://res.cloudinary.com/dx8gt3nnu/image/upload/q_auto,f_auto/dryp-shoe-pictures/fear-of-god-essentials-1977-hoodie-'iron'-ss22/display_picture.png",
-    status:"HEAT",
-    for:"WOMEN",
-    rating:"4.2",
-    description:"Fear of God Essentials delivered this Fear of God Essentials Pullover Hoodie in Linen as a part of their SSENSE-exclusive Summer 2022 release.This Fear of God Essentials Pullover Hoodie features rubberized Essentials Logos on the chest, wrist, and back. Each Fear of God Essentials Pullover Hoodie made available as a part of this release was made from an 80% Cotton, 20% Viscose blend."
   },
   {
     _id: uuid(),

@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom"
+import { useDocumentTitle } from "../../utilities/documentTitle"
 
 export const OrderPage = ()=>{
+    useDocumentTitle("Order Details")
     return(
         <div className="height">
         <div className="flex center-flex py-5 p-5">

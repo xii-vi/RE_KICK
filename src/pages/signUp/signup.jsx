@@ -4,8 +4,10 @@ import "../signUp/signup.css"
 import {Link, useNavigate} from "react-router-dom";
 import { signupReducer } from "../../reducer/authReducer";
 import { useAuth } from "../../context/authContext";
+import { useDocumentTitle } from "../../utilities/documentTitle";
 
 export const Signup = () => {
+    useDocumentTitle("Register")
     const navigate = useNavigate();
     const {authDispatch}= useAuth();
     const [{username,email,password,ConfirmPassword},signupDispatch] = useReducer(signupReducer, {email:"", password:"",ConfirmPassword:"",username:"",});

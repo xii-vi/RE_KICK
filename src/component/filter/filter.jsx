@@ -50,27 +50,6 @@ export const Filter = ({setToggle})=>{
                         <div className="mt-5">
                             <span className="btn btn-primary">${priceRange}</span>
                         </div>
-
-
-                        <p className="py-4">Filter by Rating</p>
-                        <div className="flex flex-direction-col">
-                            <label className="py-1"><input type="radio" checked={rating==="4"}
-                            name="radio-rating" onChange={() => filterDispatch({ type: "RATING", payload: "4" })}/>
-                                4★ & above
-                            </label>
-                            <label className="py-1"><input type="radio" checked={rating==="3"}
-                            name="radio-rating" onChange={() => filterDispatch({ type: "RATING", payload: "3" })}/>
-                                3★ & above
-                            </label>
-                            <label className="py-1"><input type="radio" checked={rating==="2"} name="radio-rating" onChange={() => filterDispatch({ type: "RATING", payload: "2" })}/>
-                                2★ & above
-                            </label>
-                            <label className="py-1"><input type="radio" checked={rating==="1"}name="radio-rating" onChange={() => filterDispatch({ type: "RATING", payload: "1" })}/>
-                                1★ & above
-                            </label>
-                        </div>
-
-
                         <p className="py-4">Filter by Brand</p>
                         <div className="flex flex-direction-col">
                             <label className="py-1"><input type="checkbox" value="ADIDAS" 

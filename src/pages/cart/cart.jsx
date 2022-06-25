@@ -5,7 +5,9 @@ import "./cart.css"
 import { useAddress } from "../../context/addressContext";
 import { AddressPage } from "../addressPage/addressPage";
 import { Link } from "react-router-dom";
+import { useDocumentTitle } from "../../utilities/documentTitle";
 export const Cart = ()=>{
+    useDocumentTitle("Cart")
     const { selectedAddressData } = useAddress();
     const {cartState:{cartItem}}= useCart();
     return(
