@@ -6,16 +6,16 @@ return(
 <footer className="footer-section-layout p-4">
 <div className="text-center">
     <p className="footer-heading">IMPORTANT LINKS</p>
-        <li className="gray-text pt-2">Refunds/Cancellation</li>
-        <li className="gray-text pt-2">Terms and Conditions</li>
-        <li className="gray-text pt-2">FAQs</li>
-        <li className="gray-text pt-2">Privacy Policy</li>
+    <Link to="/cart"><li className="gray-text pt-2">My Cart</li></Link>
+    <Link to="/"><li className="gray-text pt-2">Homepage</li></Link>    
+    <Link to="/product-listing"><li className="gray-text pt-2">Product Listing</li></Link>
+    <Link to="/wishlist"><li className="gray-text pt-2">Wishlist Section</li></Link>
 </div>
 <div className="text-center">
     <p className="footer-heading">NEED HELP?</p>
+        <Link to="/login"><li className="gray-text pt-2">Login</li></Link>
+        <Link to="/signup"><li className="gray-text pt-2">Register</li></Link>
         <Link to="/profile"><li className="gray-text pt-2">My Account</li></Link>
-        <li className="gray-text pt-2">Size Chart</li>
-        <li className="gray-text pt-2">Contact Us</li>
 </div>
 <div className="text-center">
     <p className="footer-heading">Follow Us</p>

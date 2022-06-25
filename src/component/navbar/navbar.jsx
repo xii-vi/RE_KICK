@@ -1,5 +1,5 @@
 import "./navbar.css"
-import { Link } from "react-router-dom";
+import { Link,useLocation,useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/authContext";
 import { toast } from "react-toastify";
 import { useCart } from "../../context/cartContext";
@@ -7,7 +7,9 @@ import {useEffect,useState} from "react"
 export const Navbar =()=>{
     const {authState:{userLogin,userData},authDispatch} = useAuth();
     const {filterDispatch,wishlistState:{wishlistItem},cartState:{cartItem},filterState:{search}} = useCart();
-    const [searchQuery,setSearchQuery] = useState("")
+    const [searchQuery,setSearchQuery] = useState("");
+    const navigate = useNavigate();
+    const { pathname } = useLocation();
     const loggedOut=()=>{
         localStorage.clear();
         authDispatch({ type: "USER_LOGOUT" })
@@ -15,6 +17,7 @@ export const Navbar =()=>{
     }
 
     useEffect(()=>{
+        if (pathname !== "/product-listing" && searchQuery) navigate("/product-listing");
         let timer = setTimeout (()=>{
         filterDispatch({ type: "FILTER_BY_SEARCH", payload: searchQuery })
         },1000)
