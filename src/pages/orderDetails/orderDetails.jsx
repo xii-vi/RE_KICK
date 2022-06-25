@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
 import { useAddress } from "../../context/addressContext";
+import { useDocumentTitle } from "../../utilities/documentTitle";
 import "./orderDetails.css"
 export const OrderDetails =()=>{
+    useDocumentTitle("Orders")
     const{orders} = useAddress();
     return(
         <>

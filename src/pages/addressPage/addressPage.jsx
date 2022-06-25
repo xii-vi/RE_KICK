@@ -2,7 +2,9 @@ import { useState } from 'react'
 import { useAddress } from "../../context/addressContext"
 import { AddressModal } from '../../component/modal/addressModal';
 import { AddressCard } from '../../component/card/addressCard';
+import { useDocumentTitle } from '../../utilities/documentTitle';
 export const AddressPage = ({ setModal }) => {
+    useDocumentTitle("Address")
     const [showModal, setShowModal] = useState(false);
     const [editAddress, setEditAddress] = useState(null);
     const { addressList } = useAddress();

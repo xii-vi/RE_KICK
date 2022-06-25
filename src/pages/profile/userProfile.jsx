@@ -1,6 +1,7 @@
 import { useAuth } from "../../context/authContext";
+import { useDocumentTitle } from "../../utilities/documentTitle";
 export const UserProfile = () => {
-
+    useDocumentTitle("Profile")
     const { authState:{userData:{firstName,lastName,email}}} = useAuth();
 
     return (

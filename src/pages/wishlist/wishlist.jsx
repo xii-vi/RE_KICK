@@ -2,8 +2,10 @@ import { useCart } from "../../context/cartContext";
 import { WishlistItem } from "../../component/card/wishlistCard";
 import { Link } from "react-router-dom";
 import "./wishlist.css";
+import { useDocumentTitle } from "../../utilities/documentTitle";
 
 export const Wishlist = () => {
+    useDocumentTitle("Wishlist")
 const {
 wishlistState: { wishlistItem },
 } = useCart();

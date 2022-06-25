@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
+import { useDocumentTitle } from '../../utilities/documentTitle';
 import error from "./error.svg"
 export const Error = () => {
+    useDocumentTitle("404")
     return (
         <>
             <div className='text-center'>

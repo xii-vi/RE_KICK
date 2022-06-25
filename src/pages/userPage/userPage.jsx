@@ -2,7 +2,9 @@ import { NavLink, Outlet } from 'react-router-dom'
 import { useState } from 'react'
 import "./userPage.css"
 import { useAuth } from '../../context/authContext'
+import { useDocumentTitle } from '../../utilities/documentTitle'
 export const UserPage = () => {
+    useDocumentTitle("Account")
     const { authState:{userData:{firstName,lastName}}} = useAuth();
     const [clickedButton,setClickedbutton] = useState("Profile");
     const buttonText =(e)=>{
@@ -18,8 +20,6 @@ export const UserPage = () => {
                     <button className='btn btn-primary user-page-link my-2' onClick={(e)=>buttonText(e)}>
                         <NavLink
                             to="/profile"
-                            // className={({ isActive }) => `${styles.sidebar__link_item} ${isActive ? styles.active__link : ""
-                            //     }`}
                         >
                             Profile
                         </NavLink>
@@ -27,8 +27,6 @@ export const UserPage = () => {
                     <button className='btn btn-primary user-page-link mb-2'onClick={(e)=>buttonText(e)}>
                         <NavLink
                             to="/profile/address"
-                            // className={({ isActive }) => `${styles.sidebar__link_item} ${isActive ? styles.active__link : ""
-                            //     }`}
                         >
                             Address
                         </NavLink>
@@ -36,8 +34,6 @@ export const UserPage = () => {
                     <button className='btn btn-primary user-page-link' onClick={(e)=>buttonText(e)}>
                         <NavLink
                             to="/profile/orderDetails"
-                            // className={({ isActive }) => `${styles.sidebar__link_item} ${isActive ? styles.active__link : ""
-                            //     }`}
                         >
                             Orders
                         </NavLink>
