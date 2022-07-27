@@ -17,27 +17,30 @@ export const UserPage = () => {
                 <div className="avatar-wrapper">
                 <img className="avatar avatar-std" src="https://re-ui.netlify.app/assets/avatar/avatar-2.png" alt="user-profile"/>
                 <span> {firstName} {lastName} </span></div>
-                    <button className='btn btn-primary user-page-link my-2' onClick={(e)=>buttonText(e)}>
                         <NavLink
                             to="/profile"
+                            onClick={(e)=>buttonText(e)}
+                            className="btn btn-primary user-page-link my-2"
                         >
                             Profile
                         </NavLink>
-                    </button>
-                    <button className='btn btn-primary user-page-link mb-2'onClick={(e)=>buttonText(e)}>
+
                         <NavLink
+                        className="btn btn-primary user-page-link my-2"
+                        onClick={(e)=>buttonText(e)}
                             to="/profile/address"
                         >
                             Address
                         </NavLink>
-                    </button>
-                    <button className='btn btn-primary user-page-link' onClick={(e)=>buttonText(e)}>
+                    
                         <NavLink
+                        className="btn btn-primary user-page-link my-2"
+                        onClick={(e)=>buttonText(e)}
                             to="/profile/orderDetails"
                         >
                             Orders
                         </NavLink>
-                    </button>
+                    
                 </div>
                 <div className='outlet-wrapper p-4'>
                     <h6>MyAccount {'>'} {clickedButton}</h6>
