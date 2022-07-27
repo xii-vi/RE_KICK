@@ -3,6 +3,7 @@ import { useAuth } from "../../context/authContext";
 import { useCart } from "../../context/cartContext";
 import { RemoveFromWishlist, updateCartItem ,updateWishlistItem } from "../../apis/apis"
 import { isItemInCart, isItemInWishlist } from "../../utilities/helperFunction";
+import { useDocumentTitle } from "../../utilities/documentTitle";
 
 export const SingleProductCard = ({productId:ID})=>{
   const navigate =  useNavigate();
@@ -10,7 +11,7 @@ export const SingleProductCard = ({productId:ID})=>{
   const { cartDispatch, wishlistDispatch,responseData,wishlistState:{wishlistItem},cartState:{cartItem}} = useCart();
   const product = responseData.find?.(item => item._id === ID);
   const {brand,model,price,description,image,id} = product ?? {}
-
+  useDocumentTitle(model);
   const addToCartHandler =()=>{
     if(userLogin){
     cartDispatch({type:"ADD_TO_CART", payload:product})
